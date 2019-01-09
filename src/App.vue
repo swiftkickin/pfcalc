@@ -1,28 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>Profit First Calculator</h1>
+
+    <h2>Income</h2>
+    <input type="text" v-model="income">
+
+    <OutcomeComponent title="Operating Expenses" percentage=".55" v-bind:income="income"/>
+    <OutcomeComponent title="Owners Pay" percentage=".25" v-bind:income="income"/>
+    <OutcomeComponent title="Taxes" percentage=".15" v-bind:income="income"/>
+    <OutcomeComponent title="Profit" percentage=".05" v-bind:income="income"/>
+    
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import OutcomeComponent from "./components/OutcomeComponent";
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+  name: "app",
+  data: function() {
+    return {
+      income: 0
+    };
+  },
+  components: { OutcomeComponent }
+};
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>

@@ -9,7 +9,6 @@
     <OutcomeComponent title="Owners Pay" percentage=".25" v-bind:income="income"/>
     <OutcomeComponent title="Taxes" percentage=".15" v-bind:income="income"/>
     <OutcomeComponent title="Profit" percentage=".05" v-bind:income="income"/>
-    
   </div>
 </template>
 
